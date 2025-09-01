@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<p align="center">Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...</p>
+<p align="center">Claude Code、Gemini CLI、Codex、Amp、その他のコーディングエージェントを10倍活用しましょう...</p>
 <p align="center">
   <a href="https://www.npmjs.com/package/vibe-kanban"><img alt="npm" src="https://img.shields.io/npm/v/vibe-kanban?style=flat-square" /></a>
   <a href="https://github.com/BloopAI/vibe-kanban/blob/main/.github/workflows/publish.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/BloopAI/vibe-kanban/.github%2Fworkflows%2Fpublish.yml" /></a>
@@ -16,96 +16,95 @@
 
 ![](frontend/public/vibe-kanban-screenshot-overview.png)
 
-## Overview
+## 概要
 
-AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process, enabling you to:
+AIコーディングエージェントが世界のコードを書くことが増え、人間のエンジニアは今や、タスクの計画、レビュー、調整に多くの時間を費やしています。Vibe Kanbanはこのプロセスを合理化し、以下のことを可能にします：
 
-- Easily switch between different coding agents
-- Orchestrate the execution of multiple coding agents in parallel or in sequence
-- Quickly review work and start dev servers
-- Track the status of tasks that your coding agents are working on
-- Centralise configuration of coding agent MCP configs
+-   さまざまなコーディングエージェントを簡単に切り替える
+-   複数のコーディングエージェントの実行を並行または直列で調整する
+-   作業を迅速にレビューし、開発サーバーを起動する
+-   コーディングエージェントが取り組んでいるタスクのステータスを追跡する
+-   コーディングエージェントのMCP設定を一元管理する
 
-You can watch a video overview [here](https://youtu.be/TFT3KnZOOAk).
+[こちら](https://youtu.be/TFT3KnZOOAk)でビデオ概要をご覧いただけます。
 
-## Installation
+## インストール
 
-Make sure you have authenticated with your favourite coding agent. A full list of supported coding agents can be found in the [docs](https://vibekanban.com/). Then in your terminal run:
+お気に入りのコーディングエージェントで認証していることを確認してください。サポートされているコーディングエージェントの完全なリストは[ドキュメント](https://vibekanban.com/)にあります。その後、ターミナルで以下を実行します：
 
 ```bash
 npx vibe-kanban
 ```
 
-## Documentation
+## ドキュメント
 
-Please head to the [website](https://vibekanban.com) for the latest documentation and user guides.
+最新のドキュメントとユーザーガイドについては、[ウェブサイト](https://vibekanban.com)をご覧ください。
 
-## Support
+## サポート
 
-Please open an issue on this repo if you find any bugs or have any feature requests.
+バグを見つけたり、機能リクエストがある場合は、このリポジトリでissueを開いてください。
 
-## Contributing
+## コントリビューション
 
-We would prefer that ideas and changes are raised with the core team via GitHub issues, where we can discuss implementation details and alignment with the existing roadmap. Please do not open PRs without first discussing your proposal with the team.
+アイデアや変更は、まずGitHubのissueを通じてコアチームに提案していただくことを推奨します。そこで、実装の詳細や既存のロードマップとの整合性について議論できます。チームと最初に提案を議論することなくPRを開かないでください。
 
-## Development
+## 開発
 
-### Prerequisites
+### 前提条件
 
-- [Rust](https://rustup.rs/) (latest stable)
-- [Node.js](https://nodejs.org/) (>=18)
-- [pnpm](https://pnpm.io/) (>=8)
+-   [Rust](https://rustup.rs/) (最新の安定版)
+-   [Node.js](https://nodejs.org/) (>=18)
+-   [pnpm](https://pnpm.io/) (>=8)
 
-Additional development tools:
+追加の開発ツール：
 ```bash
 cargo install cargo-watch
 cargo install sqlx-cli
 ```
 
-Install dependencies:
+依存関係のインストール：
 ```bash
 pnpm i
 ```
 
-### Running the dev server
+### 開発サーバーの実行
 
 ```bash
 pnpm run dev
 ```
 
-This will start the frontend and backend with live reloading. A blank DB will be copied from the `dev_assets_seed` folder.
+これにより、フロントエンドとバックエンドがライブリロードで起動します。空のDBが`dev_assets_seed`フォルダからコピーされます。
 
-### Build from source
+### ソースからのビルド
 
-1. Run `build-npm-package.sh`
-2. In the `npx-cli` folder run `npm pack`
-3. You can run your build with `npx [GENERATED FILE].tgz`
+1.  `build-npm-package.sh`を実行します
+2.  `npx-cli`フォルダで`npm pack`を実行します
+3.  `npx [生成されたファイル].tgz`でビルドを実行できます
 
+### 環境変数
 
-### Environment Variables
+以下の環境変数は、ビルド時または実行時に設定できます：
 
-The following environment variables can be configured at build time or runtime:
-
-| Variable | Type | Default | Description |
+| 変数 | タイプ | デフォルト | 説明 |
 |----------|------|---------|-------------|
-| `GITHUB_CLIENT_ID` | Build-time | `Ov23li9bxz3kKfPOIsGm` | GitHub OAuth app client ID for authentication |
-| `POSTHOG_API_KEY` | Build-time | Empty | PostHog analytics API key (disables analytics if empty) |
-| `POSTHOG_API_ENDPOINT` | Build-time | Empty | PostHog analytics endpoint (disables analytics if empty) |
-| `BACKEND_PORT` | Runtime | `0` (auto-assign) | Backend server port |
-| `FRONTEND_PORT` | Runtime | `3000` | Frontend development server port |
-| `HOST` | Runtime | `127.0.0.1` | Backend server host |
-| `DISABLE_WORKTREE_ORPHAN_CLEANUP` | Runtime | Not set | Disable git worktree cleanup (for debugging) |
+| `GITHUB_CLIENT_ID` | ビルド時 | `Ov23li9bxz3kKfPOIsGm` | 認証用のGitHub OAuthアプリのクライアントID |
+| `POSTHOG_API_KEY` | ビルド時 | 空 | PostHog分析APIキー（空の場合は分析を無効化） |
+| `POSTHOG_API_ENDPOINT` | ビルド時 | 空 | PostHog分析エンドポイント（空の場合は分析を無効化） |
+| `BACKEND_PORT` | 実行時 | `0` (自動割り当て) | バックエンドサーバーのポート |
+| `FRONTEND_PORT` | 実行時 | `3000` | フロントエンド開発サーバーのポート |
+| `HOST` | 実行時 | `127.0.0.1` | バックエンドサーバーのホスト |
+| `DISABLE_WORKTREE_ORPHAN_CLEANUP` | 実行時 | 未設定 | git worktreeのクリーンアップを無効にする（デバッグ用） |
 
-**Build-time variables** must be set when running `pnpm run build`. **Runtime variables** are read when the application starts.
+**ビルド時変数**は`pnpm run build`の実行時に設定する必要があります。**実行時変数**はアプリケーションの起動時に読み込まれます。
 
-#### Custom GitHub OAuth App (Optional)
+#### カスタムGitHub OAuthアプリ（オプション）
 
-By default, Vibe Kanban uses Bloop AI's GitHub OAuth app for authentication. To use your own GitHub app for self-hosting or custom branding:
+デフォルトでは、Vibe KanbanはBloop AIのGitHub OAuthアプリを認証に使用します。セルフホスティングやカスタムブランディングのために独自のGitHubアプリを使用するには：
 
-1. Create a GitHub OAuth App at [GitHub Developer Settings](https://github.com/settings/developers)
-2. Enable "Device Flow" in the app settings
-3. Set scopes to include `user:email,repo`
-4. Build with your client ID:
+1.  [GitHub Developer Settings](https://github.com/settings/developers)でGitHub OAuthアプリを作成します
+2.  アプリの設定で「Device Flow」を有効にします
+3.  スコープを`user:email,repo`に設定します
+4.  クライアントIDを使用してビルドします：
    ```bash
    GITHUB_CLIENT_ID=your_client_id_here pnpm run build
    ```
